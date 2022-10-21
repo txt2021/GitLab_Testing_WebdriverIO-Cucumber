@@ -15,78 +15,78 @@ const register_button = ('[data-nav="register"]');
 const register_form = ('div[class="signup-page"]');
 
 
-class SupportPage{   
+class SupportPage extends page{   
    
         async clickcontsctButton(){
-            await page.click(contact_button);        
+            await this.click(contact_button);        
         }
 
         async clickgethelpButton(){
-            await page.click(gethelp_button);        
+            await this.click(gethelp_button);        
         } 
         
         async clickservicesButton(){
-            await page.click(services_button);        
+            await this.click(services_button);        
         }
 
         async clicksalesButton(){
-            await page.click(sales_button);        
+            await this.click(sales_button);        
         }
 
         async clickregisterButton(){
-            await page.click(register_button);        
+            await this.click(register_button);        
         }
 
         async isresultVisible(){
-            await (expect(page.isdisplayed(contact_result)));
+            await this.isdisplayed(contact_result);
         }
   
         async iscontactCorrect(){
-            await (expect(page.checkElement(contact_result,contact_result_text)));
+            await this.checkElement(contact_result,contact_result_text);
         }
         
         async isgethelpCorrect(){
-            await (expect(page.checkElement(contact_result,gethelp_result_text)));
+            await this.checkElement(contact_result,gethelp_result_text);
         }
         
         async isservicesVisible(){
-            await (expect(page.isdisplayed(services_result)));
+            await this.isdisplayed(services_result);
         }
   
         async isservicesCorrect(){
-            await (expect(page.checkElement(services_result,services_result_text)));
+            await this.checkElement(services_result,services_result_text);
         }
        
         async issalesVisible(){
-            await (expect(page.isdisplayed(sales_result)));
+            await this.isdisplayed(sales_result);
         }
   
         async issalesCorrect(){
-            await (expect(page.checkElement(sales_result,sales_result_text)));
+            await this.checkElement(sales_result,sales_result_text);
         }
         
         async isregisterformVisible(){
-            await (expect(page.isdisplayed(register_form)));
+            await this.isdisplayed(register_form);
         }
 
         async urlSupportChecking(){
-            await (expect(page.urlChecking('support')));
+            await this.urlChecking('support');
         }
 
         async urlGethelpChecking(){
-            await (expect(page.urlChecking('get-help')));
+            await this.urlChecking('get-help');
         }
 
         async urlServicesChecking(){
-            await (expect(page.urlChecking('services')));
+            await this.urlChecking('services');
         }
 
         async urlSalesChecking(){
-            await (expect(page.urlChecking('sales')));
+            await this.urlChecking('sales');
         }
 
         async urlSignupChecking(){
-            await (expect(page.urlChecking('sign_up')));
+            await this.urlChecking('sign_up');
         }
 
        

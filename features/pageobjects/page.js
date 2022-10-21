@@ -1,5 +1,9 @@
 
-class Page {  
+module.exports = class Page {  
+
+    open (path) {
+        browser.url(path);
+    }
 
     async click(locator){
         await $(locator).click();
@@ -10,29 +14,17 @@ class Page {
     }
 
     async isdisplayed(locator){
-        await ((await $(locator)).toBeDisplayed());
+        const elem = await $(locator);
+        await expect(elem).toBeDisplayed();
     }
 
     async checkElement(locator,text) {
-        await ((await $(locator)).toHaveText(text));
+        const elem = await $(locator);
+        await expect(elem).toHaveText(text);
     }
 
     async urlChecking(text){
-        await (await (browser).toHaveUrlContaining(text));
-    }
-
-    async scrollIntoView(locator){
-        await ((await $(locator)).scrollIntoView());
-    }
-    
-    async hover(locator){
-        await ((await $(locator)).moveTo());
-    }
-
-  
-    async isdisplayedinViewPost(locator){
-        await ((await $(locator)).isDisplayedInViewport());
+        await expect(browser).toHaveUrlContaining(text);
     }
 
 }
-module.exports = new Page()

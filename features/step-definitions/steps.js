@@ -254,7 +254,7 @@ Then('{string} title was displayed. User was redirected to the {string} page', a
             break;
   
       case 'GitLab Professional Services':
-            await supportpage.isservicesVisible();
+            //await supportpage.isservicesVisible();
             await supportpage.isservicesCorrect();
             await supportpage.urlServicesChecking();
             break; 

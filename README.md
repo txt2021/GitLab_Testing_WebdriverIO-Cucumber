@@ -6,6 +6,7 @@ Project for testing GitLab website: https://about.gitlab.com/
 
 ## Requirements
 webdriverIO: 7^
+
 cucumber-framework: 7^
 
 Node.js : 14^

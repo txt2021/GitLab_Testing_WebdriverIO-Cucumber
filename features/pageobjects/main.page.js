@@ -19,114 +19,117 @@ const expert_button = ('[name="Talk to an expert"]');
 const trial_button = ('[name="Get free trial"]');
 const search_button = ('button[aria-label="Search"]');
 
-const why_text = " Why GitLab ";
-const platform_text = " Platform ";
-const solutions_text = " Solutions ";
+const why_text = "Why GitLab";
+const platform_text = "Platform";
+const solutions_text = "Solutions";
 const pricing_text = "Get The One  DevOps Platform"
-const partners_text = " Partners ";
-const resources_text = " Resources ";
+const partners_text = "Partners";
+const resources_text = "Resources";
 
-class MainPage {
+class MainPage extends page{
 
+    open() {
+        super.open('https://about.gitlab.com/')
+        }
 
     async clickLoginButton(){
-        await page.click(login_button);    
+        await this.click(login_button);    
         }
 
     async clicksignupButton(){
-        await page.click(sign_up_button);
+        await this.click(sign_up_button);
         }
 
     async clickwhygitlabButton(){
-        await page.click(whygitlab_button);
+        await this.click(whygitlab_button);
         }
 
     async clickplatformButton(){
-        await page.click(platform_button);
+        await this.click(platform_button);
         }
 
     async clicksolutionsButton(){
-        await page.click(solutions_button);
+        await this.click(solutions_button);
         }
 
     async clickpricingButton(){
-        await page.click(pricing_button);
+        await this.click(pricing_button);
         }
 
     async clickpartnersButton(){
-        await page.click(partners_button);
+        await this.click(partners_button);
         }
 
     async clickresourcesButton(){
-        await page.click(resources_button);
+        await this.click(resources_button);
         }
 
     async clickexpertsButton(){
-        await page.click(expert_button);
+        await this.click(expert_button);
         }
 
     async clicktrialButton(){
-        await page.click(trial_button);
+        await this.click(trial_button);
         }
 
     async clicksearchButton(){
-        await page.click(search_button);
+        await this.click(search_button);
         }
 
     async iswhyformVisible(){
-        await (expect(page.isdisplayed(whygit_form)));
+        await this.isdisplayed(whygit_form);
         }
 
     async iswhyformCorrect(){
-        await (expect(page.checkElement(whygit_form,why_text)));
+        await this.checkElement(whygit_form,why_text);
         }
 
     async isplatformformVisible(){
-        await (expect(page.isdisplayed(platform_form)));
+        await this.isdisplayed(platform_form);
         }
 
     async isplatformformCorrect(){
-        await (expect(page.checkElement(platform_form,platform_text)));
+        await this.checkElement(platform_form,platform_text);
         }
 
     async issolutionsformVisible(){
-        await (expect(page.isdisplayed(solutions_form)));
+        await this.isdisplayed(solutions_form);
         }
 
     async issolutionsformCorrect(){
-        await (expect(page.checkElement(solutions_form,solutions_text)));
+        await this.checkElement(solutions_form,solutions_text);
         }
 
     async ispricingtitleVisible(){
-        await (expect(page.isdisplayed(pricing_title)));
+        await this.isdisplayed(pricing_title);
         }
 
     async ispricingtitleCorrect(){
-        await (expect(page.checkElement(pricing_title,pricing_text)));
+        await this.checkElement(pricing_title,pricing_text);
         }
 
     async ispartnerformVisible(){
-        await (expect(page.isdisplayed(partners_form)));
+        await this.isdisplayed(partners_form);
         }
 
     async ispartnersformCorrect(){
-        await (expect(page.checkElement(partners_form,partners_text)));
+        await this.checkElement(partners_form,partners_text);
         }
 
     async isresourcesformVisible(){
-        await (expect(page.isdisplayed(resources_form)));
+        await this.isdisplayed(resources_form);
         }
 
     async isresourcesformCorrect(){
-        await (expect(page.checkElement(resources_form,resources_text)));
+        await this.checkElement(resources_form,resources_text);
         }
 
     async urlAboutChecking(){
-        await (expect(page.urlChecking('about')));
+        await this.urlChecking('about');
         }
 
     async urlPricingChecking(){
-        await (expect(page.urlChecking('pricing')));
+        await this.urlChecking('pricing');
         }
 
 }

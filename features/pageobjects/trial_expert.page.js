@@ -9,38 +9,38 @@ const trial_form = ('div[class="signup-page"]');
 const experts_form = ('div[class="form_container"]');
 
 
-class TrialPage{   
+class TrialPage extends page{   
     
         async istitleCorrect(){
-          await (expect(page.checkElement(expert_title,title_text)));
+          await this.checkElement(expert_title,title_text);
         }
 
         async istitleVisible(){
-          await (expect(page.isdisplayed(expert_title)));
+          await this.isdisplayed(expert_title);
         }
 
         async istrialCorrect(){
-            await (expect(page.checkElement(trial_title,trial_text)));
+          await this.checkElement(trial_title,trial_text);
           }
   
         async istrialVisible(){
-            await (expect(page.isdisplayed(trial_title)));
+          await this.isdisplayed(trial_title);
           }
 
         async istrialformVisible(){
-            await (expect(page.isdisplayed(trial_form)));
+          await this.isdisplayed(trial_form);
           }
 
         async isexpertsformVisible(){
-            await (expect(page.isdisplayed(experts_form)));
+          await this.isdisplayed(experts_form);
           }
 
         async urlSalesChecking(){
-            await (expect(page.urlChecking('sales')));
+          await this.urlChecking('sales');
             }
 
         async urlTrialChecking(){
-            await (expect(page.urlChecking('trial_registrations')));
+          await this.urlChecking('trial_registrations');
                 }
 
 }

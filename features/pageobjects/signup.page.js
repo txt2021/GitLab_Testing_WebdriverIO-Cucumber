@@ -25,90 +25,90 @@ const saleforce_button = ('[href="/users/auth/salesforce"]');
 const saleforce_form = ('[id="content"]');
 
 
-class SignUpPage {
+class SignUpPage extends page {
 
     async enterFirstname(){
-        await page.setvalue(user_firstname,test_firstname);
+        await this.setvalue(user_firstname,test_firstname);
         }
 
     async enterLastname(){
-        await page.setvalue(user_lastname,test_surname);
+        await this.setvalue(user_lastname,test_surname);
         }
   
     async enterUsername() {
-        await page.setvalue(username,test_name);
+        await this.setvalue(username,test_name);
         }
 
     async enterEmail(){
-        await page.setvalue(user_email,test_email);
+        await this.setvalue(user_email,test_email);
         }
   
     async enterwrongEmail(){
-        await page.setvalue(user_email,test_incorrect_email);
+        await this.setvalue(user_email,test_incorrect_email);
         }
   
     async enterPassword(){
-        await page.setvalue(password,test_pass);
+        await this.setvalue(password,test_pass);
         }
 
     async clicksubmitButton(){
-        await page.click(submit_button);
+        await this.click(submit_button);
         }
 
     async clicksigninButton(){
-        await page.click(signin_button);        
+        await this.click(signin_button);        
         }
 
     async clicksaleforceButton(){
-        await page.click(saleforce_button);        
+        await this.click(saleforce_button);        
         }
 
     async ismessageVisible(){
-        await (expect(page.isdisplayed(final_message)));
+        await this.isdisplayed(final_message);
         }
 
     async isemailmessageVisible(){
-        await (expect(page.isdisplayed(email_message)));
+        await this.isdisplayed(email_message);
         }
 
     async ismessageCorrect(){
-        await (expect(page.checkElement(final_message,capcha_text)));
+        await this.checkElement(final_message,capcha_text);
         }
 
     async isemailmessageCorrect(){
-        await (expect(page.checkElement(email_message,email_text)));
+        await this.checkElement(email_message,email_text);
         }
 
     async isemptynameVisible(){
-        await (expect(page.isdisplayed(firstname_error)));
+        await this.isdisplayed(firstname_error);
         }
   
     async isemptysurnameVisible(){
-        await (expect(page.isdisplayed(lastname_error)));
+        await this.isdisplayed(lastname_error);
         }
   
     async isemptynameCorrect(){
-        await (expect(page.checkElement(firstname_error,empty_text)));
+        await this.checkElement(firstname_error,empty_text);
         }
   
     async isemptysurnameCorrect(){
-        await (expect(page.checkElement(lastname_error,empty_text)));
+        await this.checkElement(lastname_error,empty_text);
         }
   
     async issaleforceVisible(){
-        await (expect(page.isdisplayed(saleforce_form)));
+        await this.isdisplayed(saleforce_form);
         }
 
     async urlUserChecking(){
-        await (expect(page.urlChecking('users')));
+        await this.urlChecking('users');
         }
 
     async urlSignupChecking(){
-        await (expect(page.urlChecking('sign_up')));
+        await this.urlChecking('sign_up');
         }
 
     async urlSaleforceChecking(){
-        await (expect(page.urlChecking('salesforce')));
+        await this.urlChecking('salesforce');
         }
 
 

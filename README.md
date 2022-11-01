@@ -2,6 +2,8 @@
 
 Project for testing GitLab website: https://about.gitlab.com/
 
+This project uses an Allure reporter
+
 20 test cases for sign up, search, navigation, support services, free trial and talk to an experts areas
 
 ## Requirements
